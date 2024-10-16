@@ -1,0 +1,28 @@
+ALGORITHM checkpoint
+VAR
+    ch : STRING;
+    sc,sv,sw : INTEGER;
+BEGIN
+    REPEAT
+        Write("saisie une chaine");
+        Read (ch);
+    UNTIL (ch[length(ch)-1]==".");
+
+    sc := 0;
+    sv := 0;
+    sw := 0;
+    
+    REPEAT
+    
+        IF (minus (ch[sc]) in "aeuioy") THEN
+            sv := sv+1;
+        ELSE_IF (ch[sc] == " ") THEN
+            sw := sw +1;
+        END_IF
+        sc := sc +1 ;
+    UNTIL (ch[sc]==".");
+    
+    Write ("nombre de charactere ",sc);
+    Write ("nombre de voyelle",sv);
+    Write("nombre de mots",sw+1);
+END
